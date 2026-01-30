@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './EventCarousel.css';
 
 const events = [
@@ -12,6 +13,7 @@ const events = [
 const EventCarousel = () => {
     // Clone first and last for infinite loop effect
     const extendedEvents = [events[events.length - 1], ...events, events[0]];
+    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(1);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const timeoutRef = useRef(null);
@@ -83,7 +85,12 @@ const EventCarousel = () => {
                         <div className="carousel-content">
                             <h2>{event.title}</h2>
                             <p>{event.desc}</p>
-                            <button className="carousel-btn">이벤트 확인하기</button>
+                            <button
+                                className="carousel-btn"
+                                onClick={() => navigate(`/event/${event.id}`)}
+                            >
+                                이벤트 확인하기
+                            </button>
                         </div>
                     </div>
                 ))}

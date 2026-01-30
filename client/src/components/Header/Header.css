@@ -50,3 +50,71 @@
 .user-menu a:hover {
     text-decoration: underline;
 }
+
+/* Premium Logo Styles */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 32px;
+    background: linear-gradient(135deg, #0052CC 0%, #00B8D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rotate 20s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-main {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #0052CC 0%, #00B8D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.logo-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.logo-link:hover .logo-icon {
+    animation-duration: 2s;
+}
+
+.logo-link:hover .logo-main {
+    background: linear-gradient(135deg, #00B8D9 0%, #0052CC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

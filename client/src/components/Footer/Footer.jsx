@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,16 +8,17 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-logo">
-                        <h2>Visang Mall</h2>
+                        <h2>비상기어</h2>
+                        <p className="footer-logo-sub">VISANG GEAR</p>
                     </div>
                     <div className="footer-links">
-                        <a href="#">회사소개</a>
-                        <a href="#">이용약관</a>
-                        <a href="#">개인정보처리방침</a>
-                        <a href="#">청소년보호정책</a>
+                        <Link to="/about">회사소개</Link>
+                        <Link to="/terms">이용약관</Link>
+                        <Link to="/privacy">개인정보처리방침</Link>
+                        <Link to="/youth-policy">청소년보호정책</Link>
                     </div>
                     <p className="copyright">
-                        © 2026 Visang Mall. All rights reserved.
+                        © 2026 Visang Gear (비상기어). All rights reserved.
                     </p>
                 </div>
             </div>
