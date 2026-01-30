@@ -50,14 +50,16 @@ GitHub 저장소 환경설정에서 바로 배포하는 방법입니다.
 
 ---
 
-## 💡 주의사항 (중요!)
-이 프로젝트는 **React Router**를 사용하고 있습니다. 
-배포 후 페이지를 새로고침했을 때 **404 에러**가 난다면 다음 설정을 추가해야 합니다:
+### 💡 주의사항 (중요!)
+이 프로젝트는 **React Router**를 사용하고 있으며, Windows 환경에서 배포 시 Git 경로 인식 오류가 발생할 수 있습니다.
 
-### Vercel/Netlify의 경우
-`client/public/_redirects` 파일을 만들고 아래 내용을 한 줄 넣으세요:
-```text
-/*  /index.html  200
+#### 1. 새로고침 시 404 에러 방지
+`App.jsx`에서 `HashRouter`를 사용하도록 설정해 두었습니다. 주소창에 `/#/`가 붙는 것은 정상입니다.
+
+#### 2. 'spawn git ENOENT' 오류 해결
+Windows 터미널에서 `git`을 찾지 못하는 경우를 대비해, `package.json`의 배포 스크립트를 다음과 같이 강화해 두었습니다:
+```json
+"deploy": "cmd /c \"set PATH=%PATH%;C:\\Program Files\\Git\\cmd && gh-pages -d dist\""
 ```
+이제 다시 `npm run deploy`를 실행하시면 정상적으로 배포됩니다.
 
-배포가 완료되면 이제 전 세계 어디서든 **비상기어** 쇼핑몰에 접속할 수 있습니다! 🎉
