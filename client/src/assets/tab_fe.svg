@@ -1,0 +1,43 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="feGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#98FB98;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7FE7CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5FD3BC;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="200" fill="url(#feGradient)"/>
+  
+  <!-- Tablet Device -->
+  <g filter="url(#shadow)">
+    <!-- Tablet body -->
+    <rect x="70" y="40" width="160" height="120" rx="8" fill="#2c3e50" opacity="0.9"/>
+    <rect x="75" y="45" width="150" height="110" rx="6" fill="#1a1a1a"/>
+    
+    <!-- Screen -->
+    <rect x="82" y="52" width="136" height="96" rx="3" fill="#333"/>
+    <rect x="85" y="55" width="130" height="90" fill="url(#screenGradient)"/>
+    
+    <!-- Screen content -->
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357abd;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Icons on screen -->
+    <circle cx="120" cy="85" r="8" fill="#fff" opacity="0.3"/>
+    <circle cx="145" cy="85" r="8" fill="#fff" opacity="0.3"/>
+    <circle cx="170" cy="85" r="8" fill="#fff" opacity="0.3"/>
+    <circle cx="120" cy="110" r="8" fill="#fff" opacity="0.3"/>
+    <circle cx="145" cy="110" r="8" fill="#fff" opacity="0.3"/>
+    <circle cx="170" cy="110" r="8" fill="#fff" opacity="0.3"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="150" y="185" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50" text-anchor="middle">Visang Tab FE</text>
+</svg>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import MainPage from './pages/MainPage';
@@ -13,7 +13,7 @@ import YouthPolicyPage from './pages/Footer/YouthPolicyPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/youth-policy" element={<YouthPolicyPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

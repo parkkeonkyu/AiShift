@@ -1,7 +1,7 @@
 .header {
-    height: 80px;
-    background-color: #fff;
-    border-bottom: 1px solid var(--gray-200);
+    height: var(--header-height);
+    background-color: white;
+    border-bottom: 1px solid var(--border-light);
     position: fixed;
     top: 0;
     left: 0;
@@ -16,42 +16,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 40px;
 }
 
-.logo h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.nav-list {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-list a {
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--text-color);
-    transition: color 0.2s;
-}
-
-.nav-list a:hover {
-    color: var(--primary-color);
-}
-
-.user-menu {
-    display: flex;
-    gap: 15px;
-    font-size: 14px;
-    color: var(--gray-500);
-}
-
-.user-menu a:hover {
-    text-decoration: underline;
-}
-
-/* Premium Logo Styles */
+/* Logo */
 .logo-link {
     text-decoration: none;
     color: inherit;
@@ -65,7 +33,7 @@
 
 .logo-icon {
     font-size: 32px;
-    background: linear-gradient(135deg, #0052CC 0%, #00B8D9 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -93,7 +61,7 @@
     font-size: 24px;
     font-weight: 800;
     margin: 0;
-    background: linear-gradient(135deg, #0052CC 0%, #00B8D9 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -103,7 +71,7 @@
 .logo-sub {
     font-size: 10px;
     font-weight: 600;
-    color: #666;
+    color: var(--text-light);
     letter-spacing: 1.5px;
     margin-top: 2px;
 }
@@ -112,9 +80,157 @@
     animation-duration: 2s;
 }
 
-.logo-link:hover .logo-main {
-    background: linear-gradient(135deg, #00B8D9 0%, #0052CC 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* Navigation */
+.nav {
+    flex: 1;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.nav-list a {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: color var(--transition-normal);
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-list a:hover {
+    color: var(--primary-color);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: var(--bg-gray);
+    border-radius: 20px;
+    padding: 8px 16px;
+    transition: all var(--transition-normal);
+}
+
+.search-form:focus-within {
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 200px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.search-input::placeholder {
+    color: var(--text-lighter);
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-normal);
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-link {
+    font-size: 24px;
+    transition: transform var(--transition-normal);
+    display: flex;
+    align-items: center;
+}
+
+.icon-link:hover {
+    transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .header-content {
+        gap: 20px;
+    }
+
+    .nav-list {
+        gap: 24px;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+
+    .logo-main {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        font-size: 24px;
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .search-form {
+        display: none;
+    }
+
+    .user-menu {
+        gap: 12px;
+    }
+
+    .icon-link {
+        font-size: 20px;
+    }
 }
