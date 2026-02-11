@@ -10,6 +10,7 @@ import AboutPage from './pages/Footer/AboutPage';
 import TermsPage from './pages/Footer/TermsPage';
 import PrivacyPage from './pages/Footer/PrivacyPage';
 import YouthPolicyPage from './pages/Footer/YouthPolicyPage';
+import AdminPage from './pages/Admin/AdminPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route path="/event/:id" element={<EventDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
